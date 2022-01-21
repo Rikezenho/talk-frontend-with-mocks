@@ -25,7 +25,7 @@ const Form = ({ fetchTodos = () => {} } = {}) => {
           name="todoText"
           className="input"
           type="text"
-          placeholder="Text input"
+          placeholder="Ex: pagar conta de luz"
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
         ></input>
