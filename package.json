@@ -7,6 +7,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
+    "concurrently": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -15,8 +16,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start-mock": "REACT_APP_ACTIVATE_MOCK=true react-scripts start",
+    "start": "REACT_APP_API_URL=http://localhost:9999 react-scripts start",
+    "start-mock": "REACT_APP_API_URL=http://localhost:8888 REACT_APP_ACTIVATE_MOCK=true react-scripts start",
+    "start-with-server": "concurrently -c blue,green \"npm:json-server\" \"npm:start-json-server\"",
+    "start-json-server": "REACT_APP_API_URL=http://localhost:8888 react-scripts start",
+    "json-server": "json-server --watch db.json --port 8888",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
