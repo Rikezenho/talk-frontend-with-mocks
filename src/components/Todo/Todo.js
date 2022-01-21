@@ -17,7 +17,10 @@ const Todo = ({
         setLocalIsChecked(e.target.checked)
         fetchTodos()
       })
-      .catch(() => toast.error('Error toggling todo status'))
+      .catch((e) => {
+        console.error(e.message)
+        toast.error('Error toggling todo status')
+      })
   }
 
   const remove = () => {
@@ -25,7 +28,10 @@ const Todo = ({
       .then(() => {
         fetchTodos()
       })
-      .catch(() => toast.error('Error removing todo'))
+      .catch((e) => {
+        console.error(e.message)
+        toast.error('Error removing todo')
+      })
   }
 
   useEffect(() => {

@@ -12,7 +12,10 @@ const Form = ({ fetchTodos = () => {} } = {}) => {
         fetchTodos()
         setTodoText('')
       })
-      .catch(() => toast.error('Error creating todos'))
+      .catch((e) => {
+        console.error(e.message)
+        toast.error('Error creating todos')
+      })
   }
 
   return (

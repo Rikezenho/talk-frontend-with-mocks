@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "REACT_APP_API_URL=http://localhost:9999 react-scripts start",
-    "start-mock": "REACT_APP_API_URL=http://localhost:8888 REACT_APP_ACTIVATE_MOCK=true react-scripts start",
+    "start-mock": "REACT_APP_API_URL=http://localhost:9999 REACT_APP_ACTIVATE_MOCK=true react-scripts start",
     "start-with-server": "concurrently -c blue,green \"npm:json-server\" \"npm:start-json-server\"",
     "start-json-server": "REACT_APP_API_URL=http://localhost:8888 react-scripts start",
     "json-server": "json-server --watch db.json --port 8888",

@@ -14,7 +14,10 @@ const App = () => {
   const fetchTodos = () => {
     getTodos()
       .then(({ data } = {}) => setTodos(data))
-      .catch(() => toast.error('Error getting todos'))
+      .catch((e) => {
+        console.error(e.message)
+        toast.error('Error getting todos')
+      })
   }
 
   useEffect(() => {
